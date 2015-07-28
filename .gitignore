@@ -1,0 +1,8 @@
+eclipse/
+.project
+.settings/
+.classpath
+tmp/
+public/.module-cache/
+documentation/
+application-skel.iml

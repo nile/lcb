@@ -1,0 +1,22 @@
+#{extends 'main.html' /}
+#{set title:'联系人管理' /}
+
+<header class="bar bar-nav">
+  <button class="btn btn-link btn-nav pull-left">
+    <span class="icon icon-left-nav"></span>
+    返回
+  </button>
+  <a class="btn btn-link btn-nav pull-right" href="@{Application.contactAdd}">
+    新增
+    <span class="icon icon-right-nav"></span>
+  </a>
+  <h1 class="title">联系人管理</h1>
+</header>
+
+<div class="content device-content">
+    <ul class="table-view">
+    <li class="table-view-cell">刘成穆 15988807558<span class="badge">4</span></li>
+    <li class="table-view-cell">Item 2 <span class="badge">1</span></li>
+    <li class="table-view-cell">Item 3 <span class="badge">5</span></li>
+  </ul>
+</div>

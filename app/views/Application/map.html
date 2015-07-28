@@ -1,0 +1,66 @@
+#{extends 'main.html' /}
+#{set title:'送机预约' /}
+#{set 'moreScripts'}
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=alAnDMB40APTsgEs3Vta20bI"></script>
+  <script  type="text/javascript">
+     $(document).ready(function(){
+      console.log("map")
+      var map = new BMap.Map("bdmapcontainer"); 
+      var point = new BMap.Point(116.404, 39.915);  // 创建点坐标
+      map.centerAndZoom(point, 15);
+      map.addControl(new BMap.NavigationControl());  
+      var geo = new BMap.GeolocationControl({offset: new BMap.Size(20, 70)});        
+      map.addControl(geo);
+      var marker = new BMap.Marker(point);        // 创建标注    
+      map.addOverlay(marker);      
+      
+      var makerUpdater = function(e){
+        console.log(e);
+        marker.setLabel(new BMap.Label(e.address)); 
+      };
+      
+      var geocoder = new BMap.Geocoder();
+      geocoder.getLocation(point, makerUpdater);
+      
+      map.addEventListener("moving", function(e) {
+        var cp = map.getCenter();    
+        marker.setPosition(cp);
+        geocoder.getLocation(cp, makerUpdater);
+      });
+      map.addEventListener("longpress", function(e) {
+        var cp = e.point;
+        marker.setPosition(cp);
+        map.centerAndZoom(cp, map.getZoom());
+        geocoder.getLocation(cp, makerUpdater);
+      });
+      geo.addEventListener("locationSuccess", function(e) {      
+        var cp = e.point;  
+        marker.setPosition(cp);
+        map.centerAndZoom(cp, map.getZoom());
+        geocoder.getLocation(cp, makerUpdater);
+      });
+      geo.addEventListener("locationError", function(e){
+        marker.setLabel(e.StatusCode);
+      }); 
+      geo.location();
+    });
+    </script>
+#{/set}
+
+<header class="bar bar-nav">
+  <button class="btn btn-link btn-nav pull-left">
+    <span class="icon icon-left-nav"></span>
+    确定
+  </button>
+  <button class="btn btn-link btn-nav pull-right">
+    取消
+    <span class="icon icon-right-nav"></span>
+  </button>
+  <h1 class="title">送机预约</h1>
+</header>
+
+
+<div class="content device-content"> 
+  <div id="bdmapcontainer"></div> 
+</div>
+

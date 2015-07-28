@@ -1,0 +1,6 @@
+# Application dependencies
+
+require:
+    - play
+    - com.google.guava -> guava 18.0
+    

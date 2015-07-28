@@ -1,0 +1,65 @@
+.input-row label {
+  width: 30%;
+}
+.input-row input {
+  width: 70%;
+}
+.input-row .input-group,.input-row .input-group2 {
+  width:70%;
+  display:inline-block;
+}
+.input-row .input-group input,.input-row .input-group2 input {
+  width:60%;
+  float:left;
+}
+.input-row .input-group * {
+  width:40%;padding:7px 0px;
+  float: left;
+}
+.input-row .input-group2 * {
+  width:20%;padding:7px 0px;
+  float: left;
+}
+.input-row .input-group2 input {
+  text-align: center;
+}
+
+.lrspace {
+  padding: 0px 20px;
+}
+.input-row label + select {
+  float: right;
+  width: 70%;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+
+  font:inherit; /*keep font style*/
+  height:35px; /*force same height as inputs*/
+
+  /* remove border, background and inset shadow */
+  border:none;
+  background-color:transparent;
+  box-shadow:none;
+}
+
+
+.navbar-brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+}
+
+#bdmapcontainer{
+  height:  100%;
+}
+
+.icon-location:before {
+    content: "\e601";
+}
+body {
+  font-size:17px;
+}

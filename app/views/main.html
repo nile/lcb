@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta charset="${_response_encoding}">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+
+        <link href="@{'/public/ratchet-2.0.2/dist/css/ratchet.css'}" rel="stylesheet">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+        #{get 'moreStyles' /}
+
+        #{get 'moreScripts' /}
+    </head>
+    <body>
+      
+    <script src="@{'/public/javascripts/zepto.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="@{'/public/javascripts/reactjs/react-with-addons.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="@{'/public/javascripts/reactjs/JSXTransformer.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="@{'/public/javascripts/react-router/build/umd/ReactRouter.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="@{'/public/ratchet-2.0.2/dist/js/ratchet.js'}"></script>
+    <script src="@{'/public/javascripts/alt.js'}"></script>
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=alAnDMB40APTsgEs3Vta20bI"></script>
+    <script src="@{'/public/store.js'}"></script>
+    <script type="text/javascript" src="@{'/public/ui.js'}?v1"></script>
+    <script type="text/javascript" src="@{'/public/app.js'}?v1"></script>
+
+    </body>
+</html>

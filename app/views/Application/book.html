@@ -1,0 +1,55 @@
+#{extends 'main.html' /}
+#{set title:'送机预约' /}
+
+
+<!-- Make sure all your bars are the first things in your <body> -->
+<header class="bar bar-nav">
+  <button class="btn btn-link btn-nav pull-left">
+    <span class="icon icon-left-nav"></span>
+    确定
+  </button>
+  <a class="btn btn-link btn-nav pull-right" href="@{Application.trips}">
+    取消
+    <span class="icon icon-right-nav"></span>
+  </a>
+  <h1 class="title">送机预约</h1>
+</header>
+
+<!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+<div class="content device-content">
+  <form>
+    <div class="input-row">
+      <label>送机时间</label>
+      <input type="datetime" placeholder="送机时间">
+    </div>
+    <div class="input-row">
+      <label>航班号</label>      
+      <input type="text" placeholder="航班号">
+    </div>
+    <div class="input-row">
+      <label>上车地址</label>
+      <input type="text" placeholder="上车地址">
+    </div>
+    <br/>
+    <div class="input-row">
+      <label>乘客数</label>
+      <div class="input-group2">
+        <button class="btn btn-positive btn-block">-</button>
+        <input type="text" value="1">
+        <button class="btn btn-positive btn-block">+</button>
+      </div>
+    </div>
+    <div class="input-row">
+      <label>大件行李数</label>
+      <div class="input-group2">
+        <button class="btn btn-positive btn-block">-</button>
+        <input type="text" value="1">
+        <button class="btn btn-positive btn-block">+</button>
+      </div>
+    </div>    
+    <br/>
+    <div class="lrspace">
+      <a class="btn btn-positive btn-block" href="@{Application.trips}">预约</a>
+    </div>     
+  </form>  
+</div>
