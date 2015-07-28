@@ -1,2 +1,10 @@
 # lcb
-一个html5应用，技堆栈 reactjs + react-router + alt.js + ratchet-2.0.2 + zepto.js
+你需要安装
+- java8
+- play-1.3.1
+
+# 运行
+play run
+
+# 访问
+http://localhost:9000
